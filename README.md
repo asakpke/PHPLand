@@ -1,2 +1,2 @@
 # PHPLands
-A web based project for property dealers.
+PHP Lands is a CakePHP based web project for property dealers.
