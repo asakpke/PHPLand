@@ -41,7 +41,8 @@ nbproject/*
 
 # SAS
 /bin/*
-/src/*
+/config/*
+#/src/*
 /tests/
 .editorconfig
 .gitattributes
@@ -51,11 +52,11 @@ composer.json
 composer.lock
 index.php
 phpunit.xml.dist
-/config/.env.default
-/config/app.default.php
-/config/bootstrap.php
-/config/bootstrap_cli.php
-/config/paths.php
-/config/requirements.php
-/config/routes.php
+#/config/.env.default
+#/config/app.default.php
+#/config/bootstrap.php
+#/config/bootstrap_cli.php
+#/config/paths.php
+#/config/requirements.php
+#/config/routes.php
 # EAS
