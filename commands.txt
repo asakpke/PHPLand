@@ -1,0 +1,6 @@
+git status 
+git fetch # Update current branch with online
+git add . 
+git commit -m "description"
+git push # Upload current branch to online
+git rm -r --cached . # To exclude some folders/files from online & keep on offline, you have to update .gitiqnore & excute this command

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 08, 2018 at 09:44 AM
+-- Generation Time: Jul 08, 2018 at 11:58 AM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -48,7 +48,12 @@ CREATE TABLE `lands` (
   `acre` float UNSIGNED NOT NULL,
   `kanal` float UNSIGNED NOT NULL,
   `marla` float UNSIGNED NOT NULL,
-  `location` varchar(255) DEFAULT NULL,
+  `location` text,
+  `khasra` varchar(255) NOT NULL,
+  `best_for` text NOT NULL,
+  `demand` decimal(13,2) NOT NULL,
+  `cost` decimal(13,2) NOT NULL,
+  `remarks` text NOT NULL,
   `modified` datetime DEFAULT NULL,
   `created` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -83,7 +88,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `lands`
 --
 ALTER TABLE `lands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- Constraints for dumped tables
 --
