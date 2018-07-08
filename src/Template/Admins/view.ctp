@@ -51,7 +51,15 @@
                 <th scope="col"><?= __('Admin Id') ?></th>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('Acre') ?></th>
+                <th scope="col"><?= __('Kanal') ?></th>
+                <th scope="col"><?= __('Marla') ?></th>
                 <th scope="col"><?= __('Location') ?></th>
+                <th scope="col"><?= __('Khasra') ?></th>
+                <th scope="col"><?= __('Best For') ?></th>
+                <th scope="col"><?= __('Demand') ?></th>
+                <th scope="col"><?= __('Cost') ?></th>
+                <th scope="col"><?= __('Remarks') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -61,7 +69,15 @@
                 <td><?= h($lands->admin_id) ?></td>
                 <td><?= h($lands->id) ?></td>
                 <td><?= h($lands->name) ?></td>
+                <td><?= h($lands->acre) ?></td>
+                <td><?= h($lands->kanal) ?></td>
+                <td><?= h($lands->marla) ?></td>
                 <td><?= h($lands->location) ?></td>
+                <td><?= h($lands->khasra) ?></td>
+                <td><?= h($lands->best_for) ?></td>
+                <td><?= h($lands->demand) ?></td>
+                <td><?= h($lands->cost) ?></td>
+                <td><?= h($lands->remarks) ?></td>
                 <td><?= h($lands->modified) ?></td>
                 <td><?= h($lands->created) ?></td>
                 <td class="actions">

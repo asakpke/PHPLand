@@ -19,7 +19,15 @@
         <?php
             echo $this->Form->control('admin_id', ['options' => $admins]);
             echo $this->Form->control('name');
+            echo $this->Form->control('acre');
+            echo $this->Form->control('kanal');
+            echo $this->Form->control('marla');
             echo $this->Form->control('location');
+            echo $this->Form->control('khasra');
+            echo $this->Form->control('best_for');
+            echo $this->Form->control('demand');
+            echo $this->Form->control('cost');
+            echo $this->Form->control('remarks');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

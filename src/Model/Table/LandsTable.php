@@ -65,9 +65,49 @@ class LandsTable extends Table
             ->notEmpty('name');
 
         $validator
+            ->numeric('acre')
+            ->requirePresence('acre', 'create')
+            ->notEmpty('acre');
+
+        $validator
+            ->numeric('kanal')
+            ->requirePresence('kanal', 'create')
+            ->notEmpty('kanal');
+
+        $validator
+            ->numeric('marla')
+            ->requirePresence('marla', 'create')
+            ->notEmpty('marla');
+
+        $validator
             ->scalar('location')
-            ->maxLength('location', 255)
             ->allowEmpty('location');
+
+        $validator
+            ->scalar('khasra')
+            ->maxLength('khasra', 255)
+            ->requirePresence('khasra', 'create')
+            ->notEmpty('khasra');
+
+        $validator
+            ->scalar('best_for')
+            ->requirePresence('best_for', 'create')
+            ->notEmpty('best_for');
+
+        $validator
+            ->decimal('demand')
+            ->requirePresence('demand', 'create')
+            ->notEmpty('demand');
+
+        $validator
+            ->decimal('cost')
+            ->requirePresence('cost', 'create')
+            ->notEmpty('cost');
+
+        $validator
+            ->scalar('remarks')
+            ->requirePresence('remarks', 'create')
+            ->notEmpty('remarks');
 
         return $validator;
     }

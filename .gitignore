@@ -41,7 +41,7 @@ nbproject/*
 
 # SAS
 /bin/*
-/config/*
+# /config/*
 /plugins/*
 #/src/*
 /tests/
@@ -59,5 +59,6 @@ phpunit.xml.dist
 #/config/bootstrap_cli.php
 #/config/paths.php
 #/config/requirements.php
-#/config/routes.php
+/config/routes.php
+/config/schema/*
 # EAS

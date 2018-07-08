@@ -9,7 +9,15 @@ use Cake\ORM\Entity;
  * @property int $admin_id
  * @property int $id
  * @property string $name
+ * @property float $acre
+ * @property float $kanal
+ * @property float $marla
  * @property string $location
+ * @property string $khasra
+ * @property string $best_for
+ * @property float $demand
+ * @property float $cost
+ * @property string $remarks
  * @property \Cake\I18n\FrozenTime $modified
  * @property \Cake\I18n\FrozenTime $created
  *
@@ -30,7 +38,15 @@ class Land extends Entity
     protected $_accessible = [
         'admin_id' => true,
         'name' => true,
+        'acre' => true,
+        'kanal' => true,
+        'marla' => true,
         'location' => true,
+        'khasra' => true,
+        'best_for' => true,
+        'demand' => true,
+        'cost' => true,
+        'remarks' => true,
         'modified' => true,
         'created' => true,
         'admin' => true

@@ -20,7 +20,12 @@
                 <th scope="col"><?= $this->Paginator->sort('admin_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('location') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('acre') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('kanal') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('marla') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('khasra') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('demand') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('cost') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -32,7 +37,12 @@
                 <td><?= $land->has('admin') ? $this->Html->link($land->admin->name, ['controller' => 'Admins', 'action' => 'view', $land->admin->id]) : '' ?></td>
                 <td><?= $this->Number->format($land->id) ?></td>
                 <td><?= h($land->name) ?></td>
-                <td><?= h($land->location) ?></td>
+                <td><?= $this->Number->format($land->acre) ?></td>
+                <td><?= $this->Number->format($land->kanal) ?></td>
+                <td><?= $this->Number->format($land->marla) ?></td>
+                <td><?= h($land->khasra) ?></td>
+                <td><?= $this->Number->format($land->demand) ?></td>
+                <td><?= $this->Number->format($land->cost) ?></td>
                 <td><?= h($land->modified) ?></td>
                 <td><?= h($land->created) ?></td>
                 <td class="actions">

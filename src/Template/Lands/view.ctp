@@ -27,12 +27,32 @@
             <td><?= h($land->name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Location') ?></th>
-            <td><?= h($land->location) ?></td>
+            <th scope="row"><?= __('Khasra') ?></th>
+            <td><?= h($land->khasra) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($land->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Acre') ?></th>
+            <td><?= $this->Number->format($land->acre) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Kanal') ?></th>
+            <td><?= $this->Number->format($land->kanal) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Marla') ?></th>
+            <td><?= $this->Number->format($land->marla) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Demand') ?></th>
+            <td><?= $this->Number->format($land->demand) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Cost') ?></th>
+            <td><?= $this->Number->format($land->cost) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Modified') ?></th>
@@ -43,4 +63,16 @@
             <td><?= h($land->created) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Location') ?></h4>
+        <?= $this->Text->autoParagraph(h($land->location)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Best For') ?></h4>
+        <?= $this->Text->autoParagraph(h($land->best_for)); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Remarks') ?></h4>
+        <?= $this->Text->autoParagraph(h($land->remarks)); ?>
+    </div>
 </div>
