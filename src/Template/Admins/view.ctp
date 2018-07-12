@@ -60,8 +60,8 @@
                 <th scope="col"><?= __('Demand') ?></th>
                 <th scope="col"><?= __('Cost') ?></th>
                 <th scope="col"><?= __('Remarks') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
+                <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($admin->lands as $lands): ?>
@@ -78,8 +78,8 @@
                 <td><?= h($lands->demand) ?></td>
                 <td><?= h($lands->cost) ?></td>
                 <td><?= h($lands->remarks) ?></td>
-                <td><?= h($lands->modified) ?></td>
                 <td><?= h($lands->created) ?></td>
+                <td><?= h($lands->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Lands', 'action' => 'view', $lands->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Lands', 'action' => 'edit', $lands->id]) ?>

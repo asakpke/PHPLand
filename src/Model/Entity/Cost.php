@@ -4,27 +4,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Land Entity
+ * Cost Entity
  *
- * @property int $admin_id
+ * @property int $land_id
+ * @property int $cost_cat_id
  * @property int $id
- * @property string $name
- * @property float $acre
- * @property float $kanal
- * @property float $marla
- * @property string $location
- * @property string $khasra
- * @property string $best_for
- * @property float $demand
  * @property float $cost
  * @property string $remarks
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\Admin $admin
- * @property \App\Model\Entity\Cost[] $costs
+ * @property \App\Model\Entity\Land $land
+ * @property \App\Model\Entity\CostCat $cost_cat
  */
-class Land extends Entity
+class Cost extends Entity
 {
 
     /**
@@ -37,20 +30,13 @@ class Land extends Entity
      * @var array
      */
     protected $_accessible = [
-        'admin_id' => true,
-        'name' => true,
-        'acre' => true,
-        'kanal' => true,
-        'marla' => true,
-        'location' => true,
-        'khasra' => true,
-        'best_for' => true,
-        'demand' => true,
+        'land_id' => true,
+        'cost_cat_id' => true,
         'cost' => true,
         'remarks' => true,
         'created' => true,
         'modified' => true,
-        'admin' => true,
-        'costs' => true
+        'land' => true,
+        'cost_cat' => true
     ];
 }

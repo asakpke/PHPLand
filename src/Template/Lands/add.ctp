@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('List Lands'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Admins'), ['controller' => 'Admins', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Admin'), ['controller' => 'Admins', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Costs'), ['controller' => 'Costs', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Cost'), ['controller' => 'Costs', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="lands form large-9 medium-8 columns content">

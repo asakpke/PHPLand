@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Lands Model
  *
  * @property \App\Model\Table\AdminsTable|\Cake\ORM\Association\BelongsTo $Admins
+ * @property \App\Model\Table\CostsTable|\Cake\ORM\Association\HasMany $Costs
  *
  * @method \App\Model\Entity\Land get($primaryKey, $options = [])
  * @method \App\Model\Entity\Land newEntity($data = null, array $options = [])
@@ -43,6 +44,9 @@ class LandsTable extends Table
         $this->belongsTo('Admins', [
             'foreignKey' => 'admin_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Costs', [
+            'foreignKey' => 'land_id'
         ]);
     }
 

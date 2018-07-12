@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('New Land'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Admins'), ['controller' => 'Admins', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Admin'), ['controller' => 'Admins', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Costs'), ['controller' => 'Costs', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Cost'), ['controller' => 'Costs', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="lands index large-9 medium-8 columns content">
@@ -26,8 +28,8 @@
                 <th scope="col"><?= $this->Paginator->sort('khasra') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('demand') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('cost') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -43,8 +45,8 @@
                 <td><?= h($land->khasra) ?></td>
                 <td><?= $this->Number->format($land->demand) ?></td>
                 <td><?= $this->Number->format($land->cost) ?></td>
-                <td><?= h($land->modified) ?></td>
                 <td><?= h($land->created) ?></td>
+                <td><?= h($land->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $land->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $land->id]) ?>

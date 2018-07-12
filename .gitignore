@@ -61,4 +61,6 @@ phpunit.xml.dist
 /config/requirements.php
 # /config/routes.php
 /config/schema/*
+#/src/Console/*
+#/src/Shell/*
 # EAS

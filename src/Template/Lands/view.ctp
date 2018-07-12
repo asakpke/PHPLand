@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Land'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Admins'), ['controller' => 'Admins', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Admin'), ['controller' => 'Admins', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Costs'), ['controller' => 'Costs', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Cost'), ['controller' => 'Costs', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="lands view large-9 medium-8 columns content">
@@ -55,12 +57,12 @@
             <td><?= $this->Number->format($land->cost) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($land->modified) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($land->created) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Modified') ?></th>
+            <td><?= h($land->modified) ?></td>
         </tr>
     </table>
     <div class="row">
@@ -74,5 +76,38 @@
     <div class="row">
         <h4><?= __('Remarks') ?></h4>
         <?= $this->Text->autoParagraph(h($land->remarks)); ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Costs') ?></h4>
+        <?php if (!empty($land->costs)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Land Id') ?></th>
+                <th scope="col"><?= __('Cost Cat Id') ?></th>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Cost') ?></th>
+                <th scope="col"><?= __('Remarks') ?></th>
+                <th scope="col"><?= __('Created') ?></th>
+                <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($land->costs as $costs): ?>
+            <tr>
+                <td><?= h($costs->land_id) ?></td>
+                <td><?= h($costs->cost_cat_id) ?></td>
+                <td><?= h($costs->id) ?></td>
+                <td><?= h($costs->cost) ?></td>
+                <td><?= h($costs->remarks) ?></td>
+                <td><?= h($costs->created) ?></td>
+                <td><?= h($costs->modified) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Costs', 'action' => 'view', $costs->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Costs', 'action' => 'edit', $costs->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Costs', 'action' => 'delete', $costs->id], ['confirm' => __('Are you sure you want to delete # {0}?', $costs->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
     </div>
 </div>

@@ -38,7 +38,7 @@ class LandsController extends AppController
     public function view($id = null)
     {
         $land = $this->Lands->get($id, [
-            'contain' => ['Admins']
+            'contain' => ['Admins', 'Costs']
         ]);
 
         $this->set('land', $land);

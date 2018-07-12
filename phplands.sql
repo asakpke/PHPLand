@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 08, 2018 at 11:58 AM
+-- Generation Time: Jul 12, 2018 at 05:01 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -38,6 +38,35 @@ CREATE TABLE `admins` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `costs`
+--
+
+CREATE TABLE `costs` (
+  `land_id` int(10) UNSIGNED NOT NULL,
+  `cost_cat_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `cost` decimal(13,2) NOT NULL,
+  `remarks` text NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cost_cats`
+--
+
+CREATE TABLE `cost_cats` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lands`
 --
 
@@ -54,8 +83,8 @@ CREATE TABLE `lands` (
   `demand` decimal(13,2) NOT NULL,
   `cost` decimal(13,2) NOT NULL,
   `remarks` text NOT NULL,
-  `modified` datetime DEFAULT NULL,
-  `created` datetime DEFAULT NULL
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -67,6 +96,20 @@ CREATE TABLE `lands` (
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `costs`
+--
+ALTER TABLE `costs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cost_land_id` (`land_id`),
+  ADD KEY `cost_cost_cat_id` (`cost_cat_id`);
+
+--
+-- Indexes for table `cost_cats`
+--
+ALTER TABLE `cost_cats`
+  ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
 -- Indexes for table `lands`
@@ -85,6 +128,16 @@ ALTER TABLE `lands`
 ALTER TABLE `admins`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `costs`
+--
+ALTER TABLE `costs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `cost_cats`
+--
+ALTER TABLE `cost_cats`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `lands`
 --
 ALTER TABLE `lands`
@@ -92,6 +145,13 @@ ALTER TABLE `lands`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `costs`
+--
+ALTER TABLE `costs`
+  ADD CONSTRAINT `cost_cost_cat_id` FOREIGN KEY (`cost_cat_id`) REFERENCES `cost_cats` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cost_land_id` FOREIGN KEY (`land_id`) REFERENCES `lands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `lands`
