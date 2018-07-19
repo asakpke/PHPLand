@@ -35,7 +35,6 @@
                 <th scope="col"><?= $this->Paginator->sort('cost') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('purchased') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('test') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -60,7 +59,6 @@
                 <td><?= $this->Number->format($land->cost) ?></td>
                 <td><?= h($land->purchased) ?></td>
                 <td><?= h($land->status) ?></td>
-                <td><?= h($land->test) ?></td>
                 <td><?= h($land->created) ?></td>
                 <td><?= h($land->modified) ?></td>
                 <td class="actions">

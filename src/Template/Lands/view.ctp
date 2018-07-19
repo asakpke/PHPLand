@@ -85,10 +85,6 @@
             <td><?= h($land->purchased) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Test') ?></th>
-            <td><?= h($land->test) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($land->created) ?></td>
         </tr>
