@@ -21,9 +21,11 @@ class LandsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Admins']
+            // 'contain' => ['Admins']
         ];
         $lands = $this->paginate($this->Lands);
+        // pr($lands);
+        // exit;
 
         $this->set(compact('lands'));
     }

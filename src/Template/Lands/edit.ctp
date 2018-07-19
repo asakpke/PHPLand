@@ -27,7 +27,11 @@
         <?php
             echo $this->Form->control('admin_id', ['options' => $admins]);
             echo $this->Form->control('name');
-            echo $this->Form->control('type');
+            echo $this->Form->control('type', ['options' => array(
+                'Sale' => 'Sale',
+                'Rent' => 'Rent',
+                'Investment' => 'Investment',
+            )]);
             echo $this->Form->control('acre');
             echo $this->Form->control('kanal');
             echo $this->Form->control('marla');

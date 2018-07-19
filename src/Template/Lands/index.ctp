@@ -19,48 +19,48 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('admin_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <!-- <th scope="col"><?//= $this->Paginator->sort('admin_id') ?></th> -->
+                <!-- <th scope="col"><?//= $this->Paginator->sort('id') ?></th> -->
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('type') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('acre') ?></th>
+                <!-- <th scope="col"><?//= $this->Paginator->sort('acre') ?></th> -->
                 <th scope="col"><?= $this->Paginator->sort('kanal') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('marla') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('city') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('khewat') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('khasra') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('patwar_halka') ?></th>
+                <!-- <th scope="col"><?//= $this->Paginator->sort('khewat') ?></th> -->
+                <!-- <th scope="col"><?//= $this->Paginator->sort('khasra') ?></th> -->
+                <!-- <th scope="col"><//?= $this->Paginator->sort('patwar_halka') ?></th> -->
                 <th scope="col"><?= $this->Paginator->sort('demand') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('sale') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cost') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('purchased') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <!-- <th scope="col"><//?= $this->Paginator->sort('sale') ?></th> -->
+                <!-- <th scope="col"><?//= $this->Paginator->sort('cost') ?></th> -->
+                <!-- <th scope="col"><?//= $this->Paginator->sort('purchased') ?></th> -->
+                <!-- <th scope="col"><//?= $this->Paginator->sort('status') ?></th> -->
+                <!-- <th scope="col"><//?= $this->Paginator->sort('created') ?></th> -->
+                <!-- <th scope="col"><//?= $this->Paginator->sort('modified') ?></th> -->
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($lands as $land): ?>
             <tr>
-                <td><?= $land->has('admin') ? $this->Html->link($land->admin->name, ['controller' => 'Admins', 'action' => 'view', $land->admin->id]) : '' ?></td>
-                <td><?= $this->Number->format($land->id) ?></td>
+                <!-- <td><?//= $land->has('admin') ? $this->Html->link($land->admin->name, ['controller' => 'Admins', 'action' => 'view', $land->admin->id]) : '' ?></td> -->
+                <!-- <td><?//= $this->Number->format($land->id) ?></td> -->
                 <td><?= h($land->name) ?></td>
                 <td><?= h($land->type) ?></td>
-                <td><?= $this->Number->format($land->acre) ?></td>
+                <!-- <td><?//= $this->Number->format($land->acre) ?></td> -->
                 <td><?= $this->Number->format($land->kanal) ?></td>
                 <td><?= $this->Number->format($land->marla) ?></td>
                 <td><?= h($land->city) ?></td>
-                <td><?= h($land->khewat) ?></td>
-                <td><?= h($land->khasra) ?></td>
-                <td><?= h($land->patwar_halka) ?></td>
+                <!-- <td><?//= h($land->khewat) ?></td> -->
+                <!-- <td><?//= h($land->khasra) ?></td> -->
+                <!-- <td><?//= h($land->patwar_halka) ?></td> -->
                 <td><?= $this->Number->format($land->demand) ?></td>
-                <td><?= $this->Number->format($land->sale) ?></td>
-                <td><?= $this->Number->format($land->cost) ?></td>
-                <td><?= h($land->purchased) ?></td>
-                <td><?= h($land->status) ?></td>
-                <td><?= h($land->created) ?></td>
-                <td><?= h($land->modified) ?></td>
+                <!-- <td><?//= $this->Number->format($land->sale) ?></td> -->
+                <!-- <td><?//= $this->Number->format($land->cost) ?></td> -->
+                <!-- <td><?//= h($land->purchased) ?></td> -->
+                <!-- <td><?//= h($land->status) ?></td> -->
+                <!-- <td><?//= h($land->created) ?></td> -->
+                <!-- <td><?//= h($land->modified) ?></td> -->
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $land->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $land->id]) ?>
