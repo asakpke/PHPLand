@@ -1,7 +1,16 @@
 git status
+
 git fetch # Download objects and refs from online
 git pull # Update current branch with online
+
 git add .
 git commit -m "description"
 git push # Upload current branch to online
+
 git rm -r --cached . # To exclude some folders/files from online & keep on offline, you have to update .gitiqnore & excute this command
+
+git branch # Lists all local branches
+git branch [branch-name] # Creates a new branch
+git checkout [branch-name] # Switches to the branch
+git merge [branch] # Combines the branch into the current branch
+git branch -d [branch-name] # Deletes branch
