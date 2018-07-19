@@ -70,8 +70,7 @@ class CostsTable extends Table
 
         $validator
             ->scalar('remarks')
-            ->requirePresence('remarks', 'create')
-            ->notEmpty('remarks');
+            ->allowEmpty('remarks');
 
         return $validator;
     }

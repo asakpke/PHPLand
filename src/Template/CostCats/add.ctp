@@ -18,6 +18,7 @@
         <legend><?= __('Add Cost Cat') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('remarks');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

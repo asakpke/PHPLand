@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2018 at 05:01 PM
+-- Generation Time: Jul 19, 2018 at 06:34 AM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phplands`
+-- Database: `PHPLands`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
+  `remarks` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -46,7 +47,7 @@ CREATE TABLE `costs` (
   `cost_cat_id` int(10) UNSIGNED NOT NULL,
   `id` int(10) UNSIGNED NOT NULL,
   `cost` decimal(13,2) NOT NULL,
-  `remarks` text NOT NULL,
+  `remarks` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -60,6 +61,7 @@ CREATE TABLE `costs` (
 CREATE TABLE `cost_cats` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
+  `remarks` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -74,15 +76,22 @@ CREATE TABLE `lands` (
   `admin_id` int(10) UNSIGNED NOT NULL,
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `acre` float UNSIGNED NOT NULL,
-  `kanal` float UNSIGNED NOT NULL,
-  `marla` float UNSIGNED NOT NULL,
+  `type` enum('Sale','Rent','Investment') NOT NULL DEFAULT 'Sale',
+  `acre` float UNSIGNED DEFAULT NULL,
+  `kanal` float UNSIGNED DEFAULT NULL,
+  `marla` float UNSIGNED DEFAULT NULL,
   `location` text,
-  `khasra` varchar(255) NOT NULL,
-  `best_for` text NOT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `khewat` varchar(255) DEFAULT NULL,
+  `khasra` varchar(255) DEFAULT NULL,
+  `patwar_halka` varchar(255) DEFAULT NULL,
+  `best_for` text,
   `demand` decimal(13,2) NOT NULL,
-  `cost` decimal(13,2) NOT NULL,
-  `remarks` text NOT NULL,
+  `sale` decimal(13,2) NOT NULL,
+  `cost` decimal(13,2) DEFAULT NULL,
+  `remarks` text,
+  `purchased` date DEFAULT NULL,
+  `status` enum('Available','Not Available') NOT NULL DEFAULT 'Available',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -131,7 +140,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `costs`
 --
 ALTER TABLE `costs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `cost_cats`
 --
@@ -142,23 +151,6 @@ ALTER TABLE `cost_cats`
 --
 ALTER TABLE `lands`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `costs`
---
-ALTER TABLE `costs`
-  ADD CONSTRAINT `cost_cost_cat_id` FOREIGN KEY (`cost_cat_id`) REFERENCES `cost_cats` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `cost_land_id` FOREIGN KEY (`land_id`) REFERENCES `lands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `lands`
---
-ALTER TABLE `lands`
-  ADD CONSTRAINT `land_admin_id` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

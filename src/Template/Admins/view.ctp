@@ -43,6 +43,10 @@
             <td><?= h($admin->modified) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Remarks') ?></h4>
+        <?= $this->Text->autoParagraph(h($admin->remarks)); ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Lands') ?></h4>
         <?php if (!empty($admin->lands)): ?>
@@ -51,15 +55,22 @@
                 <th scope="col"><?= __('Admin Id') ?></th>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('Type') ?></th>
                 <th scope="col"><?= __('Acre') ?></th>
                 <th scope="col"><?= __('Kanal') ?></th>
                 <th scope="col"><?= __('Marla') ?></th>
                 <th scope="col"><?= __('Location') ?></th>
+                <th scope="col"><?= __('City') ?></th>
+                <th scope="col"><?= __('Khewat') ?></th>
                 <th scope="col"><?= __('Khasra') ?></th>
+                <th scope="col"><?= __('Patwar Halka') ?></th>
                 <th scope="col"><?= __('Best For') ?></th>
                 <th scope="col"><?= __('Demand') ?></th>
+                <th scope="col"><?= __('Sale') ?></th>
                 <th scope="col"><?= __('Cost') ?></th>
                 <th scope="col"><?= __('Remarks') ?></th>
+                <th scope="col"><?= __('Purchased') ?></th>
+                <th scope="col"><?= __('Status') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -69,15 +80,22 @@
                 <td><?= h($lands->admin_id) ?></td>
                 <td><?= h($lands->id) ?></td>
                 <td><?= h($lands->name) ?></td>
+                <td><?= h($lands->type) ?></td>
                 <td><?= h($lands->acre) ?></td>
                 <td><?= h($lands->kanal) ?></td>
                 <td><?= h($lands->marla) ?></td>
                 <td><?= h($lands->location) ?></td>
+                <td><?= h($lands->city) ?></td>
+                <td><?= h($lands->khewat) ?></td>
                 <td><?= h($lands->khasra) ?></td>
+                <td><?= h($lands->patwar_halka) ?></td>
                 <td><?= h($lands->best_for) ?></td>
                 <td><?= h($lands->demand) ?></td>
+                <td><?= h($lands->sale) ?></td>
                 <td><?= h($lands->cost) ?></td>
                 <td><?= h($lands->remarks) ?></td>
+                <td><?= h($lands->purchased) ?></td>
+                <td><?= h($lands->status) ?></td>
                 <td><?= h($lands->created) ?></td>
                 <td><?= h($lands->modified) ?></td>
                 <td class="actions">

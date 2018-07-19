@@ -63,6 +63,10 @@ class CostCatsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
+        $validator
+            ->scalar('remarks')
+            ->allowEmpty('remarks');
+
         return $validator;
     }
 }

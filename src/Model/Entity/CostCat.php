@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property string $remarks
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -27,6 +28,7 @@ class CostCat extends Entity
      */
     protected $_accessible = [
         'name' => true,
+        'remarks' => true,
         'created' => true,
         'modified' => true,
         'costs' => true

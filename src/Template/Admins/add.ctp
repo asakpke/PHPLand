@@ -20,6 +20,7 @@
             echo $this->Form->control('name');
             echo $this->Form->control('email');
             echo $this->Form->control('pass');
+            echo $this->Form->control('remarks');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

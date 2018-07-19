@@ -29,8 +29,28 @@
             <td><?= h($land->name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Type') ?></th>
+            <td><?= h($land->type) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('City') ?></th>
+            <td><?= h($land->city) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Khewat') ?></th>
+            <td><?= h($land->khewat) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Khasra') ?></th>
             <td><?= h($land->khasra) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Patwar Halka') ?></th>
+            <td><?= h($land->patwar_halka) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Status') ?></th>
+            <td><?= h($land->status) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -53,8 +73,16 @@
             <td><?= $this->Number->format($land->demand) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Sale') ?></th>
+            <td><?= $this->Number->format($land->sale) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Cost') ?></th>
             <td><?= $this->Number->format($land->cost) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Purchased') ?></th>
+            <td><?= h($land->purchased) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>

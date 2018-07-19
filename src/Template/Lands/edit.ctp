@@ -27,15 +27,22 @@
         <?php
             echo $this->Form->control('admin_id', ['options' => $admins]);
             echo $this->Form->control('name');
+            echo $this->Form->control('type');
             echo $this->Form->control('acre');
             echo $this->Form->control('kanal');
             echo $this->Form->control('marla');
             echo $this->Form->control('location');
+            echo $this->Form->control('city');
+            echo $this->Form->control('khewat');
             echo $this->Form->control('khasra');
+            echo $this->Form->control('patwar_halka');
             echo $this->Form->control('best_for');
             echo $this->Form->control('demand');
+            echo $this->Form->control('sale');
             echo $this->Form->control('cost');
             echo $this->Form->control('remarks');
+            echo $this->Form->control('purchased', ['empty' => true]);
+            echo $this->Form->control('status');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

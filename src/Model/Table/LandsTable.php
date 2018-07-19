@@ -69,34 +69,49 @@ class LandsTable extends Table
             ->notEmpty('name');
 
         $validator
+            ->scalar('type')
+            ->requirePresence('type', 'create')
+            ->notEmpty('type');
+
+        $validator
             ->numeric('acre')
-            ->requirePresence('acre', 'create')
-            ->notEmpty('acre');
+            ->allowEmpty('acre');
 
         $validator
             ->numeric('kanal')
-            ->requirePresence('kanal', 'create')
-            ->notEmpty('kanal');
+            ->allowEmpty('kanal');
 
         $validator
             ->numeric('marla')
-            ->requirePresence('marla', 'create')
-            ->notEmpty('marla');
+            ->allowEmpty('marla');
 
         $validator
             ->scalar('location')
             ->allowEmpty('location');
 
         $validator
+            ->scalar('city')
+            ->maxLength('city', 255)
+            ->allowEmpty('city');
+
+        $validator
+            ->scalar('khewat')
+            ->maxLength('khewat', 255)
+            ->allowEmpty('khewat');
+
+        $validator
             ->scalar('khasra')
             ->maxLength('khasra', 255)
-            ->requirePresence('khasra', 'create')
-            ->notEmpty('khasra');
+            ->allowEmpty('khasra');
+
+        $validator
+            ->scalar('patwar_halka')
+            ->maxLength('patwar_halka', 255)
+            ->allowEmpty('patwar_halka');
 
         $validator
             ->scalar('best_for')
-            ->requirePresence('best_for', 'create')
-            ->notEmpty('best_for');
+            ->allowEmpty('best_for');
 
         $validator
             ->decimal('demand')
@@ -104,14 +119,26 @@ class LandsTable extends Table
             ->notEmpty('demand');
 
         $validator
+            ->decimal('sale')
+            ->requirePresence('sale', 'create')
+            ->notEmpty('sale');
+
+        $validator
             ->decimal('cost')
-            ->requirePresence('cost', 'create')
-            ->notEmpty('cost');
+            ->allowEmpty('cost');
 
         $validator
             ->scalar('remarks')
-            ->requirePresence('remarks', 'create')
-            ->notEmpty('remarks');
+            ->allowEmpty('remarks');
+
+        $validator
+            ->date('purchased')
+            ->allowEmpty('purchased');
+
+        $validator
+            ->scalar('status')
+            ->requirePresence('status', 'create')
+            ->notEmpty('status');
 
         return $validator;
     }

@@ -35,6 +35,10 @@
             <td><?= h($costCat->modified) ?></td>
         </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Remarks') ?></h4>
+        <?= $this->Text->autoParagraph(h($costCat->remarks)); ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Costs') ?></h4>
         <?php if (!empty($costCat->costs)): ?>

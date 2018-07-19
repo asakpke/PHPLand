@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string $email
  * @property string $pass
+ * @property string $remarks
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -31,6 +32,7 @@ class Admin extends Entity
         'name' => true,
         'email' => true,
         'pass' => true,
+        'remarks' => true,
         'created' => true,
         'modified' => true,
         'lands' => true
