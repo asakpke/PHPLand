@@ -25,6 +25,7 @@ use Cake\ORM\Entity;
  * @property string $remarks
  * @property \Cake\I18n\FrozenDate $purchased
  * @property string $status
+ * @property \Cake\I18n\FrozenDate $test
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -62,6 +63,7 @@ class Land extends Entity
         'remarks' => true,
         'purchased' => true,
         'status' => true,
+        'test' => true,
         'created' => true,
         'modified' => true,
         'admin' => true,

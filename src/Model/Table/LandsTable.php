@@ -140,6 +140,10 @@ class LandsTable extends Table
             ->requirePresence('status', 'create')
             ->notEmpty('status');
 
+        $validator
+            ->date('test')
+            ->allowEmpty('test');
+
         return $validator;
     }
 

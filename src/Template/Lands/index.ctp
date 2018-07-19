@@ -15,10 +15,7 @@
     </ul>
 </nav>
 <div class="lands index large-9 medium-8 columns content">
-    <h3>
-        <?= __('Lands') ?>
-        <input>
-    </h3>
+    <h3><?= __('Lands') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -38,6 +35,7 @@
                 <th scope="col"><?= $this->Paginator->sort('cost') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('purchased') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('test') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -62,6 +60,7 @@
                 <td><?= $this->Number->format($land->cost) ?></td>
                 <td><?= h($land->purchased) ?></td>
                 <td><?= h($land->status) ?></td>
+                <td><?= h($land->test) ?></td>
                 <td><?= h($land->created) ?></td>
                 <td><?= h($land->modified) ?></td>
                 <td class="actions">

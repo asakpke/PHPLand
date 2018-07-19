@@ -43,6 +43,7 @@
             echo $this->Form->control('remarks');
             echo $this->Form->control('purchased', ['empty' => true]);
             echo $this->Form->control('status');
+            echo $this->Form->control('test', ['empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
