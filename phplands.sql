@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2018 at 06:34 AM
+-- Generation Time: Jul 29, 2018 at 07:44 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -86,8 +86,8 @@ CREATE TABLE `lands` (
   `khasra` varchar(255) DEFAULT NULL,
   `patwar_halka` varchar(255) DEFAULT NULL,
   `best_for` text,
-  `demand` decimal(13,2) NOT NULL,
-  `sale` decimal(13,2) NOT NULL,
+  `demand` decimal(13,2) DEFAULT NULL,
+  `sale` decimal(13,2) DEFAULT NULL,
   `cost` decimal(13,2) DEFAULT NULL,
   `remarks` text,
   `purchased` date DEFAULT NULL,
