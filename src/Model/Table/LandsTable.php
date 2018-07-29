@@ -115,13 +115,15 @@ class LandsTable extends Table
 
         $validator
             ->decimal('demand')
-            ->requirePresence('demand', 'create')
-            ->notEmpty('demand');
+            // ->requirePresence('demand', 'create')
+            // ->notEmpty('demand')
+            ->allowEmpty('demand');
 
         $validator
             ->decimal('sale')
-            ->requirePresence('sale', 'create')
-            ->notEmpty('sale');
+            // ->requirePresence('sale', 'create')
+            // ->notEmpty('sale')
+            ->allowEmpty('sale');
 
         $validator
             ->decimal('cost')

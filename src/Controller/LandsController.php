@@ -20,9 +20,49 @@ class LandsController extends AppController
      */
     public function index()
     {
+        $search = $this->request->getQuery('search');
+        // pr($search);
+        // exit;
+
+        $cond = array();
+
+        if (!empty($search)) {
+            $cond['OR']['name LIKE'] = "%{$search}%";
+            $cond['OR']['type LIKE'] = "%{$search}%";
+            $cond['OR']['acre'] = (float)$search;
+            $cond['OR']['kanal'] = (float)$search;
+            $cond['OR']['marla'] = (float)$search;
+            $cond['OR']['location LIKE'] = "%{$search}%";
+            $cond['OR']['city LIKE'] = "%{$search}%";
+            $cond['OR']['khewat LIKE'] = "%{$search}%";
+            $cond['OR']['khasra LIKE'] = "%{$search}%";
+            $cond['OR']['patwar_halka LIKE'] = "%{$search}%";
+            $cond['OR']['best_for LIKE'] = "%{$search}%";
+            $cond['OR']['demand'] = $search;
+            $cond['OR']['sale'] = $search;
+            $cond['OR']['cost'] = $search;
+            $cond['OR']['remarks LIKE'] = "%{$search}%";
+            $cond['OR']['purchased'] = $search;
+            $cond['OR']['status LIKE'] = "%{$search}%";
+        }
+
         $this->paginate = [
             // 'contain' => ['Admins']
+            'conditions' => $cond // [
+                // 'name' => $search
+                // !empty($search) ? 'name' => $search : '';
+                // 'name' => "$search"
+                // 'name' => "'$search'"
+                // 'type' => 'Sale'
+                // 'name' => '3',
+                // 'Lands__name' => '1',
+                // 'Lands.name' => '1',
+                // 'location' => '1'
+            // ]
         ];
+        // pr($this->paginate);
+
+        // pr($this->Lands);
         $lands = $this->paginate($this->Lands);
         // pr($lands);
         // exit;

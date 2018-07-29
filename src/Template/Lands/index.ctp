@@ -15,7 +15,13 @@
     </ul>
 </nav>
 <div class="lands index large-9 medium-8 columns content">
-    <h3><?= __('Lands') ?></h3>
+    <form>
+        <h3>
+            <?= __('Lands') ?>
+            <input id="search" name="search" autofocus>
+            <!-- <a href="#">Advanced Search</a> -->
+        </h3>
+    </form>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -81,3 +87,6 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+<script>
+
+</script>
