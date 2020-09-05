@@ -3,3 +3,5 @@ PHP Lands is a CakePHP (version 3 or 3.5 or more precisely 3.5.10) based web pro
 
 ## Installation
 Install CakePHP & download/copy PHPLands in to it.
+
+[Become a patron](https://patreon.com/asakpke)
